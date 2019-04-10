@@ -1,0 +1,66 @@
+riehl046
+
+1) add(to the end) ------ LinkedList = O(1) ----------- ArrayList = O(1) or O(n) 
+	Explanation: For the < linkedList > the complexity is O(1) if you keep track of the last node becuase you can just append a new node to
+		the existing last node and reassign the last node. For the < ArrayList > the complexity is generally O(1) since you can add
+		the new object directly at the next open index. It changes to O(n) if you have to resize the array, but this happens infrequently.
+
+2) add(at an index) ----- LinkedList = O(n) ----------- ArrayList = O(n)
+	Explanation: For the < LinkedList > the complexity is O(n) because you have to iterate through the linked list to find the desired 
+		index, then you can insert the node in its place. For the < ArrayList > it is also O(n), since even though you can jump immediately
+		to the correct index, you must then shift every object from then on one space to the right, with a worst case-scanerio at index 0.
+
+3) clear() -------------- LinkedList = O(1) ----------- ArrayList O(1)
+	Explanation: For the < LinkedList > the complexity is O(1) because all you have to do is set the 'next' field on the headed node to
+		'null', set the 'last node' pointer to null, and set the number of elements to zero. For the < ArrayList > the complexity is 
+		also O(1) because you have to is set the previous ArrayList variable to a new empty one, and change the storage counter to zero.
+
+4) contains() ----------- LinkedList = O(n) ----------- ArrayList O(n) or O(log(n))
+	Explanation: For the < LinkedList > the complexity is always O(n) regardless of whether or not the List is sorted because you cannot iterate backwards
+		through a linkedList, nor can you jump to an index. Therefore you must go through the items sequentially. For the < ArrayList > the complexity is
+		O(n) if the list is unsorted, because worst-case you must go through every element sequentially. If the List is sorted, with a true binary search
+		you can drop the complexity to O(log(n)), because you are dividing the list in two every time you check an element. My search algorithm isn't a true
+		binary search, and ends up being O(n/2) which is still technically O(n).
+
+5) get(index) ---------- LinkedList = O(n) ------------ ArrayList O(1)
+	Explanation: For a < LinkedList > you can't jump to a specific index so you must iterate through the entire linkedList up until the desired index,
+		with a worst case being the last element. For the < ArrayList > the complexity is O(1) because you can jump immediately to the index and
+		return what is found.
+
+6) indexOf(name) ------- LinkedList = O(n) ---------- ArrayList = O(n) or O(log(n))
+	Explanation: Essentially the same as the contains() function, especially if it doesn't matter whether or not you grab the first index of the element (assuming
+		there can be duplicates).
+
+7) isEmpty()  --------- LinkedList = O(1) ----------- ArrayList = O(1)
+	Explanation: Both are O(1) because you can just check the counter variable, and if it is zero the List is empty.
+
+8) lastIndexOf(element) --------- LinkedList = O(n) ------------- ArrayList O(n) or O(log(n)) ~ kinda
+	Explanation: For the < LinkedList > you are forced to iterate through the list sequentially and worst case the last index is the last one, regardless of whether
+		or not the LinkedList is sorted (if it is sorted, you know that you can stop early though). For the < ArrayList > the complexity if unsorted is O(n) because 
+		you'll have to check every element of the list. If it is sorted the complexity is more-or-less O(log(n)) because you can run a binary search and if you find it 
+		run up the list until you hit the last index of the element. This could still run O(n) if your list is essentially all that one element.
+
+9) set(index) --------- LinkedList = O(n) ----------------- ArrayList = O(1)
+	Explanation: For the < LinkedList > the complexity is O(n) because you must iterate through the list to the desired index before replacing the element there, worst case you 
+		want the last element. For the < ArrayList > the complexity is O(1) because you can jump immedietly to the index and replace it in constant time.
+
+10) size() -------------LinkedList = O(1) ----------------- ArrayList = O(1)
+	Explanation: For both you can check the 'next' field which doubles as the number of elements contained within the list. This is done in constant time.
+
+11) sort() ------------- LinkedList = O(n^2) -------------- ArrayList = O(n^2)
+	Explanation: Since both use bubble sort from lecture, they have the same complexity. Bubble sort is O(n^2) because you have to go through the list once for each element within 
+		the list, n elements and n executions per element is n^2 executions. Bubble sort is technically a little less because you can ignore the last indexies as you continue through.
+
+12) remove(index) ------- LinkedList = O(n) -------------- ArrayList = O(n)
+	Explanation: For the < LinkedList > the complexity is O(n) because you must iterate through the linkedList to get to the desired index before you are able to remove it. For the 
+		< ArrayList > the complexity is also O(n) because although you can jump immedietly to the correct index, upon removal you must shift every object past that one space to the left, 
+		which worst case could be every element.
+
+13) toString() -------- LinkedList = O(n) --------------- ArrayList = O(n)
+	Explanation: Both of the toString() algorithms in my functions build the string when the function is called, so they iterate through the entire list and add together all the toString()'s 
+		of the elements, therefor the complexity is O(n) because it must iterate through the entire list.
+
+Sorry for the spelling errors, I wrote this in notepad.
+
+In case my explanations don't state this clearly, O(n) means that worst-case you could have to check every element in the list, O(n^2) means for every element you have to make n function calls
+(only used in sorting), and O(1) means it doesn't rely on the size of the List at all. 
