@@ -10,4 +10,7 @@ def p2():
     while True:
         None
 
-p2()
+def p3():
+    depth_first_tree_search(EightPuzzle((6,2,3,1,5,4,0,7,8)))
+
+p3()
