@@ -7,7 +7,7 @@ def p1():
 
 def p2():
     depth_limited_search(EightPuzzle((6,2,3,1,5,4,0,7,8)))
-    #while True:
-    #    None
+    while True:
+        None
 
 p2()
